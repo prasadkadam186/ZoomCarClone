@@ -1,1 +1,56 @@
-<p>booking works!</p>
+<div class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="card shadow-sm rounded-4"
+        style="width: 100%; max-width: 500px; height: 350px; background-color: #ffffff;">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <img [src]="car.image" alt="Car Image" class="rounded-3"
+            style="max-width: 90%; max-height: 90%; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Right: Car Details & Booking -->
+    <div class="col-md-6">
+      <div class="bg-white rounded shadow-sm p-4">
+        <h3 class="fw-bold">{{ car.name }}</h3>
+        <span class="badge bg-primary mb-2">{{ car.plate }}</span>
+
+        <p class="mb-1"><strong>Seats:</strong> {{ car.seats }}</p>
+
+        <p class="mb-2">
+          <strong>Accessories:</strong><br />
+          {{ car.accessories }}
+        </p>
+
+        <p class="text-muted mb-4">
+          <strong>Registered on:</strong> {{ car.registeredDate }}
+        </p>
+
+        <hr />
+
+        <!-- Booking Form -->
+        <h5 class="fw-bold mb-3">Book This Car</h5>
+        <form (ngSubmit)="bookCar()" #bookingForm="ngForm">
+          <div class="mb-3">
+            <label class="form-label">Travel Date</label>
+            <input type="date" class="form-control" name="date" [(ngModel)]="booking.date" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Start Time</label>
+            <input type="time" class="form-control" name="startTime" [(ngModel)]="booking.startTime" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">End Time</label>
+            <input type="time" class="form-control" name="endTime" [(ngModel)]="booking.endTime" required />
+          </div>
+
+          <button class="btn btn-danger w-100" type="submit" [disabled]="!bookingForm.valid">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

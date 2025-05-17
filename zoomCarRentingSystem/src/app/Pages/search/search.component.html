@@ -1,1 +1,59 @@
-<p>search works!</p>
+<div class="container-fluid my-4">
+  <div class="row">
+    <!-- Sidebar Filters -->
+    <div class="col-md-3 mb-4">
+      <div class="p-3 bg-white rounded shadow">
+        <h5 class="fw-bold mb-3">Filters</h5>
+
+        <div class="mb-3">
+          <label class="form-label">Price Range</label>
+          <div class="d-flex gap-2">
+            <input type="number" class="form-control" placeholder="Min" />
+            <input type="number" class="form-control" placeholder="Max" />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Brand</label>
+          <select class="form-select">
+            <option selected>All Brands</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Location</label>
+          <select class="form-select">
+            <option selected>All Locations</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+
+        <button class="btn btn-danger w-100 mt-3">Apply Filters</button>
+      </div>
+    </div>
+
+    <!-- Car List -->
+    <div class="col-md-9">
+      <div class="row g-4">
+        <!-- Car Card -->
+        <div class="col-md-4" *ngFor="let car of cars">
+          <div class="card shadow-sm h-100">
+            <img src="{{car.image}}" class="card-img-top rounded-top" alt="car image" />
+            <div class="card-body">
+              <h5 class="card-title">{{car.name}}</h5>
+              <p class="mb-1 text-muted">Location</p>
+              <p class="mb-2">{{car.location}}</p>
+              <button class="btn btn-outline-danger btn-sm w-100">View Details</button>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat Card -->
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,30 @@
+nav{
+    height: 75px;
+    background-color: rgba(50, 99, 172, 0.9);
+}
+.fa-car{
+    color: #f03000;
+    padding-left: 5%;
+}
+li a{
+    color:white
+}
+li a:hover{
+    color: #f03000;
+}
+.submit-btn{
+    border: 1px solid white;
+    border-radius: 9px;
+    height: 40px;
+}
+.submit-btn:hover{
+    border: 1px solid #f03000;
+    color: #f03000;
+}
+.modal-body button{
+    background-color: #f03000;
+}
+.modal-footer span:hover{
+    color: #f03000;
+    text-decoration: underline;
+}
